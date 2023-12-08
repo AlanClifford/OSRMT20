@@ -1,0 +1,1 @@
+java -cp * com.osrmt.appclient.setup.Configuration

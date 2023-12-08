@@ -1,0 +1,1 @@
+java -cp "*" com.osrmt.appclient.reqmanager.RequirementManagerController
