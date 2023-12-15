@@ -1,4 +1,4 @@
-- [Desktop Application v1.8](https://github.com/osrmt/osrmt/releases/download/1.8/osrmt_1.8_desktop.zip)
+- [Desktop Application v2.0](https://github.com/AlanClifford/OSRMT20)
 
 # Open Source Requirements Management Tool
 Open Source Requirements Management Tool (OSRMT) is a configurable, free open source solution that gives you an easy-to-install and easy-to-use solution for defining and managing software requirements. 
@@ -53,13 +53,13 @@ If you have any questions refer to [FAQ](https://drive.google.com/open?id=1BTU3B
 - thanked for your contribution no matter how small or in what area.
 
 ## Getting started for users
-Currently available latest version 1.8 can be downloaded by one of the following links:
- - [Desktop application v1.8](https://github.com/osrmt/osrmt/releases/download/1.8/osrmt_1.8_desktop.zip)
+Currently available latest version 2.0 can be downloaded by one of the following links:
+ - [Desktop application v2.0](https://github.com/AlanClifford/OSRMT20)
 
 ### Pre-installation requirements
  - Windows, Linux or MacOS
  - Archiver (winrar, 7-Zip, etc)
- - Installed JRE 1.8+
+ - Installed JRE 1.8
 
 ### Installation process
 #### Desktop/Web app
@@ -108,10 +108,10 @@ Follow next steps only in case you want to use external DBMS (Oracle, MySQL, MS 
  10) application will be deployed in JBoss server on 8080 port, it will be accessible locally by following address http://localhost:8080/osrmt
 
 ### Development requirements
- - JDK 1.8+
+ - JDK 1.8
  - Eclipse (as of now project is configured for Eclipse IDE)
  - Database server, one of the following: MySQL, Oracle, Postgres, MS Sql, MS Access
- - Ant
+ - Maven
  - GIT client.
 
 ### Getting started for developers
