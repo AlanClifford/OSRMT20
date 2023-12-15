@@ -310,6 +310,7 @@
     </dependencies>
 
     <properties>
+        <!--  The current dependency package is too old to upgrade to a newer JDK9+ version.  -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -317,7 +318,120 @@
         <runtime-lib.systemPath>${project.basedir}/build-resources/common/runtime-lib</runtime-lib.systemPath>
     </properties>
 
-    <name>osrmt</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <includes>
+                                        <include>**/*</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>/</directory>
+                                    <includes>
+                                        <include>*.xml</include>
+                                        <include>client.properties</include>
+                                        <filtering>false</filtering>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>build-resources/appclient/resources</directory>
+                                    <includes>
+                                        <include>**/*</include>
+                                        <filtering>false</filtering>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>build-resources/common/resources</directory>
+                                    <includes>
+                                        <include>**/*</include>
+                                        <filtering>false</filtering>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>build-resources/common/resources</directory>
+                                    <includes>
+                                        <include>**/*</include>
+                                        <filtering>false</filtering>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>build-resources/db</directory>
+                                    <includes>
+                                        <include>**/*</include>
+                                        <filtering>false</filtering>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>build-resources/db-init/common</directory>
+                                    <includes>
+                                        <include>**/*</include>
+                                        <filtering>false</filtering>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.osrmt.appclient.reqmanager.RequirementManagerController</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <name>app-client</name>
     <description>Modules for OSRMT 2.0</description>
     <inceptionYear>2006</inceptionYear>
     <licenses>
