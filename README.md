@@ -59,7 +59,7 @@ Currently available latest version 2.0 can be downloaded by one of the following
 ### Pre-installation requirements
  - Windows, Linux or MacOS
  - Archiver (winrar, 7-Zip, etc)
- - Installed JRE 1.8
+ - Installed JRE 1.8 (The current dependency package is too old to upgrade to a newer JDK9+ version.)
 
 ### Installation process
 #### Desktop/Web app
