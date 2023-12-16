@@ -161,10 +161,9 @@ public class RequirementManagerController extends RequirementManagerBaseControll
 	
 	private void initForm() {
 		// show the form
-		//TODO Size and location should be in properties
-		ui.setLocation(UIProperties.getPoint50_50());
 		ui.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
-		ui.setSize(UIProperties.getWINDOW_SIZE_900_675());
+		ui.setSize(UIProperties.getDIALOG_SIZE_1280_720());
+		ui.centerDisplay();
 		ui.setTitle("OSRMT - " + Application.getUser().getUserLogin() 
 				+ "@" + SecurityServices.getEnvironment());
 		ui.setIconImage(GUI.getImage("osrmt.gif",this));

@@ -77,6 +77,10 @@ public class UIProperties {
 		return new Dimension(760,560);
 	}
 
+	public static final Dimension getDIALOG_SIZE_1280_720() {
+		return new Dimension(1280,720);
+	}
+
     public static void configureUI() {
     	GUI.setLookAndFeel();
     	

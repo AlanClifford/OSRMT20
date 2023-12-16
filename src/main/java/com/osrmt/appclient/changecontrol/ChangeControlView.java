@@ -64,10 +64,9 @@ public class ChangeControlView extends UIJFrame {
 
 	private void initForm() {
 		// show the form
-		//TODO Size and location should be in properties
-		setLocation(UIProperties.getPoint100_100());
 		setDefaultCloseOperation(javax.swing.JFrame.HIDE_ON_CLOSE);
 		setSize(UIProperties.getWINDOW_SIZE_800_600());
+		this.centerDisplay();
 		setTitle("OSRMT - " + Application.getUser().getUserLogin() 
 				+ "@" + SecurityServices.getEnvironment());
 		setIconImage(GUI.getImage("changecontrol.gif",this));
