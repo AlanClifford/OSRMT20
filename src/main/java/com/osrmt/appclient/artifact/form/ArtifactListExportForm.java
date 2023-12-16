@@ -52,6 +52,7 @@ public class ArtifactListExportForm extends UICenterSouthDialog {
 	}
 	
 	public void initialize() {
+		super.initialize();
 		try {
 			initForm();
 			addListeners();

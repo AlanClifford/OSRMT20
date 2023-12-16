@@ -26,13 +26,11 @@ public class UICenterSouthDialog extends UIJDialog {
 	public UICenterSouthDialog(Dialog owner, boolean modal)
 			throws HeadlessException {
 		super(owner, modal);
-		initialize();
 	}
 
 	public UICenterSouthDialog(Frame owner, boolean modal)
 			throws HeadlessException {
 		super(owner, modal);
-		initialize();
 	}
 	
 	public void initialize() {
