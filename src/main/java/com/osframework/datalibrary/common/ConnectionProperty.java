@@ -119,7 +119,7 @@ public class ConnectionProperty implements Serializable  {
 
 	public String getUrl() {
 		if (isUnicodeConnection()) {
-			return url + "?useUnicode=true&characterEncoding=UTF-8";
+			return url + "?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
 		} else {
 			return url;
 		}
