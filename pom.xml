@@ -66,6 +66,11 @@
             <artifactId>itextpdf</artifactId>
             <version>5.5.13.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.2.5</version>
+        </dependency>
 
         <!--  Dependencies are directly dependent from the project path to avoid incompatibilities  -->
         <dependency>
