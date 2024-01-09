@@ -45,6 +45,7 @@ import com.osrmt.modellibrary.reference.group.FormButtonTextGroup;
 import com.osrmt.modellibrary.reference.group.SystemMessageGroup;
 import com.osrmt.modellibrary.reqmanager.ArtifactList;
 import com.osrmt.modellibrary.reqmanager.ArtifactModel;
+import org.apache.commons.lang.StringUtils;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -52,8 +53,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
-import java.util.*;
+import java.util.Vector;
 
 public class RequirementManagerActions {
 
@@ -766,7 +769,7 @@ public class RequirementManagerActions {
                         m.setDisplay(inputNewProduct.getInputText());
                         m.setDisplayCode();
                         ReferenceDisplay rd = ReferenceServices.getDisplay(ReferenceGroup.Product, m.getDisplayCode());
-                        if (!Objects.isNull(rd)) {
+                        if (StringUtils.isNotBlank(rd.toString())) {
                             JOptionPane.showMessageDialog(frame, "The Product you exported is duplicated with the existing one.");
                             inputNewProduct.dispose();
                             createProductInputPopup();
