@@ -785,6 +785,7 @@ public class RequirementManagerActions {
                                 + "@" + SecurityServices.getEnvironment());
                         inputNewProduct.dispose();
                         controller.buildTree();
+                        controller.setArtifactList(new ArtifactList(), 0);
                     } catch (Exception ex) {
                         Debug.LogException(this, ex);
                     }
